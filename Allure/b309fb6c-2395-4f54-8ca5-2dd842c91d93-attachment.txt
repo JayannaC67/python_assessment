@@ -1,0 +1,38 @@
+initiating chrome driver
+initiating chrome driver
+Stakify Application is launched Successfully ... ..... PASS
+we are in Stakify homepage
+https://stackify.com/
+valid url
+Application Performance Monitoring Tools For Developers
+6
+Product
+Pricing
+Solutions
+Learn
+Login
+Start Free Trial
+when the value of i is :1 the value of the text is : Product
+when the value of i is :2 the value of the text is : Product
+when the value of i is :3 the value of the text is : Product
+when the value of i is :4 the value of the text is : Product
+when the value of i is :5 the value of the text is : Product
+when the value of i is :6 the value of the text is : Product
+Data is written into the file.
+7
+ruby clicked
+https://stackify.com/retrace-apm-ruby/
+valid ruby url
+False
+The value of ruby_text is :lightweight profiling
+review our docs
+review doc clicked
+came back to previous page
+Start free trial displayed
+request demo button displayed
+Stackify is now BMC. Read theBlog
+demo req clicked
+schedule demo clicked without details
+Checkboxdisplayed
+False
+True

@@ -4,6 +4,8 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+
+from Learning.Actions_class import Actions_class
 from Locatorss import Stackify_locators
 import time
 from Test_scripts.conftest import readJson
@@ -128,6 +130,9 @@ class Stakify_page_object:
             print("request demo button displayed")
         else:
             print("request demo button not displayed")
+        self.driver.refresh()
+
+        time.sleep(2)
 
         self.driver.find_element(By.XPATH,Stackify_locators.requestdemo()).click()
         time.sleep(2)
@@ -139,6 +144,7 @@ class Stakify_page_object:
             print("demo req not clicked")
 
     def test_schedule_demo(self):
+       # self.driver.refresh()
         self.driver.execute_script("window.scrollTo(0, 1500)")  # to scroll down the page
         time.sleep(3)
         #to click schedule demo button
@@ -179,7 +185,13 @@ class Stakify_page_object:
         time.sleep(2)
         self.driver.find_element(By.XPATH,Stackify_locators.Note_textfield()).send_keys(readJson["Note"])
         time.sleep(2)
-        self.driver.execute_script("window.scrollTo(0, 1000)")  # to scroll down the page
+        Find_checkbox=self.driver.find_element(By.XPATH,Stackify_locators.validate_checkbox())
+        ActionChains(self.driver).move_to_element(Find_checkbox).perform()
+        #self.driver.execute_script("window.scrollTo(0, 1000)")  # to scroll down the page
+        if self.driver.find_element(By.XPATH,Stackify_locators.validate_checkbox()).is_displayed():
+            print("Checkboxdisplayed")
+        else:
+            print("checkbox not displayed")
         time.sleep(3)
         #checkbox
         checkbox1 = self.driver.find_element(By.XPATH, Stackify_locators.validate_checkbox()).is_selected()
@@ -190,8 +202,61 @@ class Stakify_page_object:
         checkbox2 = self.driver.find_element(By.XPATH, Stackify_locators.validate_checkbox()).is_selected()
         print(checkbox2)
 
+    def mouseover_solutions(self, readJson):
+        solutions = self.driver.find_element(By.XPATH, Stackify_locators.mouseover())
+        ActionChains(self.driver).move_to_element(solutions).perform()
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, Stackify_locators.click_Java()).click()
+        Apm = self.driver.find_element(By.XPATH, Stackify_locators.click_apm())
+        ActionChains(self.driver).move_to_element(Apm).perform()
+        self.driver.find_element(By.XPATH, Stackify_locators.click_apm()).click()
+        time.sleep(2)
+        if self.driver.find_element(By.XPATH, Stackify_locators.header_text()).is_displayed():
+            print("apm clicked")
+        else:
+            print("apm not clicked")
+        header = self.driver.find_element(By.XPATH, Stackify_locators.header_text()).text
+        print(header)
+        original_window = self.driver.current_window_handle
+        print(original_window)
+        Sandbox_button = self.driver.find_element(By.XPATH, Stackify_locators.Apm_sandbox())
+        ActionChains(self.driver).move_to_element(Sandbox_button).perform()
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, Stackify_locators.Apm_sandbox()).click()
+        for window_handle in self.driver.window_handles:
+            if window_handle != original_window:
+                self.driver.switch_to.window(window_handle)
+                print(self.driver.current_url)
+                print(self.driver.title)
+                time.sleep(2)
+                self.driver.find_element(By.XPATH, Stackify_locators.sandbox_email()).send_keys(readJson["Email"])
+                self.driver.find_element(By.XPATH, Stackify_locators.sandbox_pwd()).send_keys(readJson["Phone"])
+                time.sleep(2)
+                self.driver.close()
+        self.driver.switch_to.window(original_window)
+        time.sleep(2)
+        print(self.driver.current_url)
+        print(self.driver.title)
 
 
 
+
+
+
+
+        '''
+
+    def test_clicking_javamonitoring(self):
+        Javaa=self.driver.find_element(By.XPATH,Stackify_locators.Java_monitoring())
+        ActionChains(self.driver).move_to_element(Javaa).perform()
+        if self.driver.find_element(By.XPATH,Stackify_locators.Java_monitoring()).is_displayed():
+            print("Java")
+        else:
+            print("Java is not displayed")
+
+        ActionChains(self.driver).context_click(Javaa).perform()
+
+
+'''
 
 

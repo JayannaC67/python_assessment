@@ -22,6 +22,9 @@ class Test_Stakify_e2e:
         homepage.test_validating_buttons()
         homepage.test_schedule_demo()
         homepage.test_fillthe_details(readJson)
+        homepage.mouseover_solutions(readJson)
+
+        #homepage.test_clicking_javamonitoring()
 
 
 

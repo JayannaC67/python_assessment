@@ -1,0 +1,21 @@
+initiating chrome driver
+initiating chrome driver
+Stakify Application is launched Successfully ... ..... PASS
+we are in Stakify homepage
+https://stackify.com/
+valid url
+Application Performance Monitoring Tools For Developers
+6
+Product
+Pricing
+Solutions
+Learn
+Login
+Start Free Trial
+when the value of i is :1 the value of the text is : Product
+when the value of i is :2 the value of the text is : Product
+when the value of i is :3 the value of the text is : Product
+when the value of i is :4 the value of the text is : Product
+when the value of i is :5 the value of the text is : Product
+when the value of i is :6 the value of the text is : Product
+Data is written into the file.
