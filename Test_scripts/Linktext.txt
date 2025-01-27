@@ -1,0 +1,21 @@
+The Links In Herokuapp Homepage are : 
+Elemental Selenium
+1. 
+2. A/B Testing
+3. Add/Remove Elements
+4. Basic Auth
+5. Broken Images
+6. Challenging DOM
+7. Checkboxes
+8. Context Menu
+9. Digest Authentication
+10. Disappearing Elements
+11. Drag and Drop
+12. Dropdown
+13. Dynamic Content
+14. Dynamic Controls
+15. Dynamic Loading
+16. Entry Ad
+17. Exit Intent
+18. File Download
+The number of links in the homepage with text : 18
